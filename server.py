@@ -7,6 +7,7 @@ import sqlite3, os, json, hashlib, hmac, base64, time, re
 from datetime import datetime, timedelta, date
 from functools import wraps
 from flask import Flask, request, jsonify, send_from_directory, send_file
+init_db()
 
 app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
 

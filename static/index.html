@@ -1857,7 +1857,8 @@ body {
 // ══════════════════════════════════════
 // CONFIG
 // ══════════════════════════════════════
-const API = 'http://localhost:5000/api';
+const API = window.location.origin + '/api';
+
 let token = localStorage.getItem('kk_token');
 let currentUser = null;
 let currentWeekOffset = 0;

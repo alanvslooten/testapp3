@@ -7,7 +7,7 @@ import sqlite3, os, json, hashlib, hmac, base64, time, re
 from datetime import datetime, timedelta, date
 from functools import wraps
 from flask import Flask, request, jsonify, send_from_directory, send_file
-init_db()
+
 
 app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
 
@@ -965,7 +965,8 @@ def hours_stats():
     conn.close()
     return jsonify(result)
 
+init_db()
+
 if __name__ == '__main__':
-    init_db()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
